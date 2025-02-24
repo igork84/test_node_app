@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: igorktestnodeapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: igorktestnodeapp
+  template:
+    metadata:
+      labels:
+        app: igorktestnodeapp 
+    spec:
+      containers:
+        - name: igorktestnodeapp 
+          image: ikacr.azurecr.io/igorktestnodeapp
+          ports:
+          - containerPort: 8080
